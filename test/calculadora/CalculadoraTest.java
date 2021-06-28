@@ -49,5 +49,22 @@ public class CalculadoraTest {
 		assertThrows(ArithmeticException.class,
 				() -> calc.divisao(8, 0));
 	}
+	
+	@DisplayName("Testa a multiplicação de dois números")
+	@Test
+	void testMultiplicacao() {
+		assertEquals(3 * 3, calc.multiplicacao(3, 3));
+	}
+	
+	@DisplayName("Testa a subtração de dois números")
+	@Test
+	void testSubtracao() {
+		Assertions.assertAll("subtracao",
+			() -> assertEquals(-2 - -2, calc.subtracao(-2, -2)),
+			() -> assertEquals(2 - 4, calc.subtracao(2, 4))						
+		);
+	}
+	
+	
 
 }
